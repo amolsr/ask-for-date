@@ -1,15 +1,24 @@
 import './App.css';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import { useEffect, useState } from 'react';
-import { Button, Stack } from '@mui/material';
+import { Button, Grid } from '@mui/material';
 
 function App() {
 
   var handleClick = (e) => {
-    console.log(e.target.value)
+    console.log(e.target.value + " " + noCount)
+    if (e.target.value === "No") {
+      setIsNo(!isNo)
+      setNoCount(noCount + 1)
+      console.log(e.target.className)
+    } else {
+
+    }
   }
 
-  const [index, setindex] = useState(0)
+  const [index,] = useState(0)
+  const [isNo, setIsNo] = useState(false)
+  const [noCount, setNoCount] = useState(0)
   var questions = [{
     question: "Are you up for a date with me .?",
     options: ["Yes", "No"]
@@ -23,7 +32,6 @@ function App() {
       position => { console.log(position.coords.latitude + " " + position.coords.longitude) },
       err => console.log(err)
     );
-    console.log(this.state.latitude)
   }
   useEffect(() => {
     position()
@@ -37,12 +45,14 @@ function App() {
           {questions[index].question}
         </p>
         <p>
-          <Stack spacing={2} direction="row">
-            {questions[index].options.map((item) => {
-              return <><Button variant="contained" onClick={handleClick} value={item}>{item}</Button></>
-
-            })}
-          </Stack>
+          <Grid container spacing={2}>
+            <Grid item xs={6}>
+              <Button variant="contained" onClick={handleClick} value={questions[index].options[0]} >{questions[index].options[0]}</Button>
+            </Grid>
+            <Grid item xs={6}>
+              <Button variant="contained" onClick={handleClick} value={questions[index].options[1]} className={isNo ? 'buttonLeft' : null}>{questions[index].options[1]}</Button>
+            </Grid>
+          </Grid>
         </p>
       </header>
 

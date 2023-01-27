@@ -27,10 +27,14 @@
 
 @keyframes App-logo-spin {
   from {
-    transform: scale(20);
+    transform: scale(25);
   }
 
   to {
     transform: scale(30);
   }
+}
+
+.buttonLeft {
+  margin-left: 60px !important;
 }

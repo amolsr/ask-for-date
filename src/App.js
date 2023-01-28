@@ -37,20 +37,20 @@ function App() {
     options: ["Roses", "Chocolates"]
   }]
 
-  var position = async () => {
-    await navigator.geolocation.getCurrentPosition(
-      position => {
-        setPos({
-          lat: position.coords.latitude,
-          long: position.coords.longitude
-        })
-      },
-      err => console.log(err)
-    );
-  }
-  useEffect(() => {
-    position()
-  }, [])
+//   var position = async () => {
+//     await navigator.geolocation.getCurrentPosition(
+//       position => {
+//         setPos({
+//           lat: position.coords.latitude,
+//           long: position.coords.longitude
+//         })
+//       },
+//       err => console.log(err)
+//     );
+//   }
+//   useEffect(() => {
+//     position()
+//   }, [])
 
   return (
     <div className="App">

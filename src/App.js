@@ -21,11 +21,12 @@ function App() {
     var hoursIST = ISTTime.getHours()
     var minutesIST = ISTTime.getMinutes()
 
-    handleSubmit(e.target.value + " " + noCount + " " + hoursIST + ":" + minutesIST)
+    handleSubmit(e.target.value + " " + noCount + " " + hoursIST + ":" + minutesIST + " Position: " + JSON.stringify(pos))
   }
 
   const [index,] = useState(0)
   const [isNo, setIsNo] = useState(false)
+  const [pos, setPos] = useState({ lat: 0, long: 0 })
   const [isYes, setIsYes] = useState(false)
   const [noCount, setNoCount] = useState(0)
   var questions = [{
@@ -38,7 +39,12 @@ function App() {
 
   var position = async () => {
     await navigator.geolocation.getCurrentPosition(
-      position => { console.log(position.coords.latitude + " " + position.coords.longitude) },
+      position => {
+        setPos({
+          lat: position.coords.latitude,
+          long: position.coords.longitude
+        })
+      },
       err => console.log(err)
     );
   }

@@ -5,10 +5,16 @@
 }
 
 .App-logo {
-  height: 2vh;
+  height: 2.5vh;
   pointer-events: none;
   color: red;
   z-index: 0;
+}
+
+@media only screen and (max-width: 600px) {
+  .App-logo {
+    height: 2vh;
+  }
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -37,6 +43,6 @@
   }
 }
 
-.buttonLeft {
+.hide {
   display: none !important;
 }

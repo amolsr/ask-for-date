@@ -1,8 +1,7 @@
 import './App.css';
-import FavoriteIcon from '@mui/icons-material/Favorite';
 import { useEffect, useState } from 'react';
 import { Button, Grid } from '@mui/material';
-
+import heart from './heart.svg'
 function App() {
 
   var handleClick = (e) => {
@@ -40,8 +39,8 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <FavoriteIcon className="App-logo" alt="logo" />
-        <p style={{ marginTop: "-4rem" }}>
+        <img src={heart} className="App-logo" alt="logo" />
+        <p style={{ marginTop: "-4rem", color: "white", zIndex: 1 }}>
           {questions[index].question}
         </p>
         <p>

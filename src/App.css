@@ -1,12 +1,14 @@
 .App {
   text-align: center;
+  background-color: #FFD4DC;
+  overflow-x: hidden;
 }
 
 .App-logo {
-  height: 40vmin;
+  height: 2vh;
   pointer-events: none;
   color: red;
-  z-index: -1;
+  z-index: 0;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -36,5 +38,5 @@
 }
 
 .buttonLeft {
-  margin-left: 60px !important;
+  display: none !important;
 }

@@ -35,3 +35,4 @@ jobs:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
           firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_ASK_FOR_DATE }}'
           projectId: ${{ secrets.REACT_APP_PROJECTID }}
+          channelID: live

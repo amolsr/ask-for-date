@@ -1,5 +1,6 @@
 import './App.css';
-import { useEffect, useState } from 'react';
+import {  useState } from 'react';
+// import { useEffect } from 'react';
 import { Button, Grid } from '@mui/material';
 import heart from './heart.svg'
 import handleSubmit from './action/handleSubmit';
@@ -24,9 +25,9 @@ function App() {
     handleSubmit(e.target.value + " " + noCount + " " + hoursIST + ":" + minutesIST + " Position: " + JSON.stringify(pos))
   }
 
-  const [index,] = useState(0)
+  const [index, ] = useState(0)
   const [isNo, setIsNo] = useState(false)
-  const [pos, setPos] = useState({ lat: 0, long: 0 })
+  const [pos, ] = useState({ lat: 0, long: 0 })
   const [isYes, setIsYes] = useState(false)
   const [noCount, setNoCount] = useState(0)
   var questions = [{
